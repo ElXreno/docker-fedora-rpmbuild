@@ -5,7 +5,7 @@ FROM fedora:34
 RUN dnf upgrade --refresh -y
 
 # nosync: work-around to install nosync.i686.
-RUN dnf install mock rpmdevtools rpm-build fedpkg nosync -y && \
+RUN dnf install mock rpmdevtools rpm-build fedpkg copr-cli nosync -y && \
     dnf install nosync.i686 -y && \
     dnf install fish -y && \
     dnf clean all
